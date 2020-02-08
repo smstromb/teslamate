@@ -34,8 +34,6 @@ ENV LANG=C.UTF-8 \
 RUN apk add --update --no-cache bash openssl tzdata
 
 WORKDIR $HOME
-RUN chown -R nobody: .
-USER nobody
 
 COPY --chown=nobody entrypoint.sh /
 COPY --from=builder --chown=nobody /opt/built .
